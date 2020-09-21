@@ -99,41 +99,41 @@ void setup() {
           Serial.println("FORWARD");
           M5.Lcd.fillScreen(GREEN);
           ledcWrite(MOTOR1_PWMCH, duty);
-          ledcWrite(MOTOR2_PWMCH, duty);
           digitalWrite(MOTOR1_DIR, HIGH);
+          ledcWrite(MOTOR2_PWMCH, duty);
           digitalWrite(MOTOR2_DIR, HIGH);
         }
         else if (c == REVERSE){
           Serial.println("REVERSE");
           M5.Lcd.fillScreen(RED);
           ledcWrite(MOTOR1_PWMCH, duty);
-          ledcWrite(MOTOR2_PWMCH, duty);
           digitalWrite(MOTOR1_DIR, LOW);
+          ledcWrite(MOTOR2_PWMCH, duty);
           digitalWrite(MOTOR2_DIR, LOW);
         }
         else if (c == BREAK) {
           Serial.println("BREAK");
           M5.Lcd.fillScreen(BLACK);
           ledcWrite(MOTOR1_PWMCH, 0);
-          ledcWrite(MOTOR2_PWMCH, 0);
           digitalWrite(MOTOR1_DIR, LOW);
+          ledcWrite(MOTOR2_PWMCH, 0);
           digitalWrite(MOTOR2_DIR, LOW);
         }
         else if (c == LEFT) {
           Serial.println("LEFT");
           M5.Lcd.fillScreen(CYAN);
           ledcWrite(MOTOR1_PWMCH, duty);
+          digitalWrite(MOTOR1_DIR, HIGH);
           ledcWrite(MOTOR2_PWMCH, 0);
-          digitalWrite(MOTOR1_DIR, LOW);
-          digitalWrite(MOTOR2_DIR, HIGH);
+          digitalWrite(MOTOR2_DIR, LOW);
         }
         else if (c == RIGHT) {
           Serial.println("RIGHT");
           M5.Lcd.fillScreen(YELLOW);
           ledcWrite(MOTOR1_PWMCH, 0);
+          digitalWrite(MOTOR1_DIR, LOW);          
           ledcWrite(MOTOR2_PWMCH, duty);
-          digitalWrite(MOTOR1_DIR, HIGH);
-          digitalWrite(MOTOR2_DIR, LOW);
+          digitalWrite(MOTOR2_DIR, HIGH);
         }                
       }
   );
